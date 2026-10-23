@@ -322,3 +322,30 @@
  76%{transform:rotate(calc(var(--fire-angle) - 6deg)) scale(1.03,.9)}
 }
 @media(max-width:620px){.slogan-fire{height:55px;bottom:-5px;left:3%;right:3%}}
+
+/* Flammen im gewünschten runden Emoji-Stil */
+.club-slogan .slogan-fire{
+ display:flex;align-items:flex-end;justify-content:center;gap:0;
+ left:5%;right:5%;bottom:-5px;height:82px;
+ filter:drop-shadow(0 0 5px #ff780055);
+}
+.slogan-fire .fire-emoji{
+ display:block;flex:0 0 auto;margin:0 -5px;
+ font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+ font-size:var(--flame-size);font-style:normal;font-weight:400;line-height:1;
+ letter-spacing:0;text-shadow:none;-webkit-text-stroke:0;
+ transform-origin:50% 90%;
+}
+@media(prefers-reduced-motion:no-preference){
+ .slogan-fire .fire-emoji{animation:bsc-emoji-fire 5s ease-in-out var(--flame-offset) infinite}
+}
+@keyframes bsc-emoji-fire{
+ 0%,100%{transform:rotate(-4deg) scale(.96,.93)}
+ 25%{transform:rotate(3deg) scale(1.02,1.06)}
+ 50%{transform:rotate(-2deg) scale(.97,1)}
+ 75%{transform:rotate(4deg) scale(1.03,.95)}
+}
+@media(max-width:620px){
+ .club-slogan .slogan-fire{height:62px;left:2%;right:2%;bottom:-4px}
+ .slogan-fire .fire-emoji{font-size:calc(var(--flame-size) * .76);margin:0 -4px}
+}
