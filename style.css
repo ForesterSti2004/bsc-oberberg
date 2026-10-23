@@ -148,3 +148,7 @@
  .firework-burst:nth-child(3){left:86%;top:71%}
  .firework-burst i{width:3px;height:3px}
 }
+
+/* Slogan näher ans Logo und etwas präsenter */
+.hero-art .club-slogan{bottom:-7px;font-size:clamp(22px,2.4vw,34px)}
+@media(max-width:620px){.hero-art .club-slogan{bottom:7px;font-size:24px;letter-spacing:1px}}
