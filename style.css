@@ -171,3 +171,29 @@
 
 /* Mobiles Menü direkt unter dem Header ohne Entwurfsbanner */
 @media(max-width:620px){header{position:relative}header nav{top:100%}}
+
+/* Zwei Konfettikanonen für den einmaligen Logo-Auftritt */
+.hero-confetti{display:none;position:absolute;inset:0;z-index:3;pointer-events:none;overflow:visible}
+.confetti-cannon{position:absolute;bottom:15%;width:0;height:0}
+.confetti-cannon.left{left:5%}
+.confetti-cannon.right{right:5%}
+.confetti-cannon i{position:absolute;display:block;width:8px;height:5px;background:var(--confetti-color);border-radius:1px;opacity:0}
+.confetti-cannon i:nth-child(4n){width:5px;height:5px;border-radius:50%}
+.confetti-cannon i:nth-child(5n){width:4px;height:11px}
+@media(prefers-reduced-motion:no-preference){
+ .hero-confetti{display:block}
+ .confetti-cannon i{animation:bsc-confetti-flight var(--confetti-duration) cubic-bezier(.15,.55,.4,1) var(--confetti-delay) both}
+}
+@keyframes bsc-confetti-flight{
+ 0%{opacity:0;transform:translate(0,0) rotate(0deg) scale(.3)}
+ 6%{opacity:1}
+ 42%{opacity:1;transform:translate(calc(var(--confetti-x) * .65),var(--confetti-y)) rotate(calc(var(--confetti-spin) * .45)) scale(1)}
+ 80%{opacity:1}
+ 100%{opacity:0;transform:translate(var(--confetti-x),calc(var(--confetti-y) + 230px)) rotate(var(--confetti-spin)) scale(.65)}
+}
+@media(max-width:620px){
+ .confetti-cannon.left{left:8%}
+ .confetti-cannon.right{right:8%}
+ .confetti-cannon i{width:6px;height:4px}
+ .hero-confetti{transform:scale(.8);transform-origin:50% 80%}
+}
