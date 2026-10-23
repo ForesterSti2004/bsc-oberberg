@@ -268,3 +268,22 @@
  .logo-flames i:nth-child(2),.logo-flames i:nth-child(5){height:95px;width:29px}
  .logo-flames i:nth-child(3),.logo-flames i:nth-child(6){height:60px;width:25px}
 }
+
+/* Feinere Flammen mit schlanken Spitzen und weichem Licht */
+.logo-flames i{
+ width:27px;
+ border-radius:0;
+ clip-path:polygon(48% 0%,61% 22%,57% 37%,75% 27%,73% 49%,89% 67%,93% 82%,79% 96%,49% 100%,20% 95%,7% 79%,13% 61%,29% 39%,30% 61%,42% 45%,44% 24%);
+ background:linear-gradient(0deg,#d94312b3 0%,#ff8715d9 40%,#ffc441eb 75%,#ffe69de6 100%);
+ box-shadow:none;
+ opacity:.78;
+}
+.logo-flames i::after{inset:47% 32% 5%;border-radius:75% 18% 70% 30%;background:linear-gradient(0deg,#ffc541,#fff1b6);opacity:.7}
+.logo-flames i:nth-child(1),.logo-flames i:nth-child(4){width:27px;height:100px}
+.logo-flames i:nth-child(2),.logo-flames i:nth-child(5){width:23px;height:130px}
+.logo-flames i:nth-child(3),.logo-flames i:nth-child(6){width:20px;height:78px}
+@media(max-width:620px){
+ .logo-flames i:nth-child(1),.logo-flames i:nth-child(4){width:18px;height:68px}
+ .logo-flames i:nth-child(2),.logo-flames i:nth-child(5){width:16px;height:88px}
+ .logo-flames i:nth-child(3),.logo-flames i:nth-child(6){width:14px;height:52px}
+}
