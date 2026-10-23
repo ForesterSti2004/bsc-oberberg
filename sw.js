@@ -1,6 +1,6 @@
 const CACHE='bsc-oberberg-offline-v2';
 const MARKER=new URL('/__bsc_offline_enabled__',self.location.origin).href;
-const FILES=['/','/index.html','/style.css','/app.js','/manifest.webmanifest','/datenschutz.html','/assets/logo.webp','/assets/icon-192.png','/assets/icon-512.png'];
+const FILES=['/','/index.html','/style.css','/app.js','/leagues.js','/manifest.webmanifest','/datenschutz.html','/assets/logo.webp','/assets/icon-192.png','/assets/icon-512.png'];
 async function isEnabled(){return Boolean(await caches.match(MARKER,{cacheName:CACHE}));}
 self.addEventListener('install',event=>event.waitUntil(self.skipWaiting()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
