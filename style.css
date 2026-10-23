@@ -3,3 +3,22 @@
 
 /* Vorstand: Bildplatzhalter bis zur Ergänzung der Porträts */
 .board{border-top:1px solid #d5d7d8}.board-intro{color:#66707c;font-size:14px;line-height:1.8;max-width:600px}.board-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:35px}.board-card{min-width:0}.portrait-placeholder{aspect-ratio:4/5;background:#e5e8ea;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding:22px}.portrait-placeholder:before{content:"";position:absolute;width:28%;aspect-ratio:1;border-radius:50%;background:#aab7c5;top:20%;left:36%}.portrait-placeholder:after{content:"";position:absolute;width:64%;height:42%;border-radius:50% 50% 0 0;background:#aab7c5;left:18%;bottom:15%}.portrait-placeholder span{position:relative;z-index:1;color:#526276;font-size:9px;letter-spacing:2px;font-weight:700}.board-card h3{font-size:19px;margin:20px 0 8px}.board-card p{font-size:12px;color:#66707c;margin:0}.board-card .board-status{display:inline-block;font-size:8px;letter-spacing:1.4px;color:#bd2635;margin-top:14px}@media(max-width:900px){.board-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 22px}}@media(max-width:620px){.board-grid{gap:26px 16px}.portrait-placeholder{padding:15px 5px}.portrait-placeholder span{font-size:7px;letter-spacing:1px}.board-card h3{font-size:17px}}
+
+/* Gelber Stern als Hintergrund des großen Vereinslogos */
+.hero-art::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(118%,620px);
+  aspect-ratio:1;
+  background:#ffd329;
+  clip-path:polygon(50% 0%,61.8% 35.1%,98% 35.1%,68.6% 56.9%,79.4% 91%,50% 70%,20.6% 91%,31.4% 56.9%,2% 35.1%,38.2% 35.1%);
+  transform:translate(-50%,-50%) rotate(-12deg);
+  z-index:0;
+  pointer-events:none;
+}
+.hero-art>.year,.hero-art>.vertical{z-index:2}
+@media(max-width:620px){
+  .hero-art::after{width:min(116%,390px)}
+}
