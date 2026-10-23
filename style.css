@@ -304,3 +304,21 @@
  13%,18%{opacity:1}
  28%,100%{opacity:0}
 }
+
+/* Animierter Flammensaum hinter dem weißen Vereinsslogan */
+.hero-art .club-slogan{isolation:isolate}
+.club-slogan .slogan-text{position:relative;z-index:1}
+.slogan-fire{position:absolute;left:6%;right:6%;bottom:-7px;height:76px;z-index:-1;pointer-events:none;filter:drop-shadow(0 0 7px #ff710077)}
+.slogan-fire i{position:absolute;bottom:0;left:var(--fire-left);width:14%;height:var(--fire-height);transform-origin:50% 100%;transform:rotate(var(--fire-angle));border-radius:70% 15% 65% 30%;background:linear-gradient(0deg,#9d2000 0%,#f34b08 28%,#ff9c18 63%,#ffe384 100%);clip-path:polygon(48% 0%,64% 24%,57% 43%,76% 31%,86% 63%,96% 83%,76% 100%,23% 100%,4% 81%,18% 53%,31% 65%,37% 34%);opacity:.9}
+.slogan-fire i::after{content:"";position:absolute;inset:48% 30% 0;background:linear-gradient(0deg,#ffb824,#fff0a1);border-radius:70% 15% 60% 30%}
+@media(prefers-reduced-motion:no-preference){
+ .slogan-fire i{animation:bsc-slogan-fire 5s ease-in-out var(--fire-delay) infinite}
+}
+@keyframes bsc-slogan-fire{
+ 0%,100%{transform:rotate(var(--fire-angle)) scale(.9,.85)}
+ 17%{transform:rotate(calc(var(--fire-angle) + 5deg)) scale(.86,1.06)}
+ 35%{transform:rotate(calc(var(--fire-angle) - 4deg)) scale(1,.82)}
+ 54%{transform:rotate(calc(var(--fire-angle) + 3deg)) scale(.91,1.12)}
+ 76%{transform:rotate(calc(var(--fire-angle) - 6deg)) scale(1.03,.9)}
+}
+@media(max-width:620px){.slogan-fire{height:55px;bottom:-5px;left:3%;right:3%}}
