@@ -60,3 +60,12 @@
  paint-order:stroke fill;
  text-shadow:-1px -1px 0 #071b35,1px -1px 0 #071b35,-1px 1px 0 #071b35,1px 1px 0 #071b35,1px 2px 0 #8c9aae,2px 3px 0 #687b94,3px 4px 0 #334b69,4px 5px 0 #071b35,0 7px 9px #0009;
 }
+
+/* Slogan etwas höher und größer platzieren */
+.hero-art .club-slogan{
+ bottom:-23px;
+ font-size:clamp(19px,2.1vw,29px);
+}
+@media(max-width:620px){
+ .hero-art .club-slogan{bottom:-7px;font-size:21px}
+}
