@@ -22,3 +22,29 @@
 @media(max-width:620px){
   .hero-art::after{width:min(116%,390px)}
 }
+
+/* Goldene Lichtkante und versetzte Rückseite für räumliche Tiefe */
+.hero-art::before{
+  content:"";
+  position:absolute;
+  left:calc(50% + 8px);
+  top:calc(50% + 12px);
+  width:min(118%,620px);
+  height:auto;
+  aspect-ratio:1;
+  background:linear-gradient(135deg,#d99a0b 0%,#9b5805 60%,#633504 100%);
+  clip-path:polygon(50% 0%,61.8% 35.1%,98% 35.1%,68.6% 56.9%,79.4% 91%,50% 70%,20.6% 91%,31.4% 56.9%,2% 35.1%,38.2% 35.1%);
+  transform:translate(-50%,-50%) rotate(-12deg);
+  filter:drop-shadow(8px 18px 14px #0007);
+  z-index:-1;
+  pointer-events:none;
+}
+.hero-art::after{
+  background:
+    linear-gradient(145deg,#fff9ca9c 0%,#fff4aa00 43%,#b6700033 100%),
+    conic-gradient(from 0deg at 50% 48%,#fff0a0 0deg 36deg,#ffd12b 36deg 72deg,#ffdf54 72deg 108deg,#e9a814 108deg 144deg,#ffd83e 144deg 180deg,#df9511 180deg 216deg,#ffd84d 216deg 252deg,#eeb41d 252deg 288deg,#fff3aa 288deg 324deg,#ffdc45 324deg 360deg);
+}
+.hero-art>img{filter:drop-shadow(0 16px 12px #0006)}
+@media(max-width:620px){
+  .hero-art::before{width:min(116%,390px);left:calc(50% + 5px);top:calc(50% + 8px)}
+}
