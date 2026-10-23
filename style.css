@@ -48,3 +48,7 @@
 @media(max-width:620px){
   .hero-art::before{width:min(116%,390px);left:calc(50% + 5px);top:calc(50% + 8px)}
 }
+
+/* Vereinsslogan unter dem großen Logo */
+.hero-art .club-slogan{position:absolute;z-index:2;left:0;right:0;bottom:-45px;margin:0;max-width:none;text-align:center;font-size:clamp(16px,1.7vw,24px);font-weight:800;font-style:italic;letter-spacing:2px;line-height:1.3;color:#ffd329;text-shadow:0 3px 10px #0007}
+@media(max-width:620px){.hero-art .club-slogan{bottom:-23px;font-size:17px;letter-spacing:1.5px}}
