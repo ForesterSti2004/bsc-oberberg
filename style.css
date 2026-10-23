@@ -349,3 +349,27 @@
  .club-slogan .slogan-fire{height:62px;left:2%;right:2%;bottom:-4px}
  .slogan-fire .fire-emoji{font-size:calc(var(--flame-size) * .76);margin:0 -4px}
 }
+
+/* WBU-Saisontabellen */
+.standings{background:#ebeae5}
+.league-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:30px}
+.league-card{min-width:0;background:var(--paper);border:1px solid #d1d5d9;border-top:4px solid var(--red)}
+.league-title{padding:25px 22px 18px}.league-title h3{font-size:25px;margin:12px 0 8px}
+.league-day{font-size:12px;color:#647180;margin:0}
+.league-scroll{overflow-x:auto;overscroll-behavior-x:contain}
+.league-table{border-collapse:collapse;width:100%;min-width:590px;font-size:12px;font-variant-numeric:tabular-nums}
+.league-table th,.league-table td{padding:14px 10px;border-bottom:1px solid #dde0e2;text-align:right;white-space:nowrap}
+.league-table thead{background:var(--navy);color:white}
+.league-table thead th{font-size:10px;letter-spacing:.5px}
+.league-table th:nth-child(2){text-align:left;white-space:normal;min-width:170px}
+.league-table tbody th{font-weight:500}
+.league-table .own-team{background:#e92c3910}
+.league-table .own-team th{font-weight:800;color:#b51e2d;border-left:3px solid var(--red)}
+.league-foot{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:18px 22px 22px}
+.league-status,.league-note{font-size:11px;color:#657180;line-height:1.8}
+.league-note{margin:22px 0 0;max-width:900px}
+.league-foot .inline-link{margin-top:0}
+#standings-refresh:disabled{opacity:.6;cursor:wait}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media(max-width:1279px){.league-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:620px){.league-title{padding:22px 16px 16px}.league-title h3{font-size:23px}.league-foot{padding:16px}.league-table{font-size:12px}.league-note{font-size:10px}}
