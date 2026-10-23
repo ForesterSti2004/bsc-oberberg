@@ -197,3 +197,44 @@
  .confetti-cannon i{width:6px;height:4px}
  .hero-confetti{transform:scale(.8);transform-origin:50% 80%}
 }
+
+/* Logo, Glanz, Feuerwerk und Konfetti starten alle fünf Sekunden neu */
+@media(prefers-reduced-motion:no-preference){
+ .hero-art>img{animation:bsc-logo-loop 5s cubic-bezier(.2,.75,.25,1) infinite both}
+ .hero-art::after{animation:bsc-glint-loop 5s ease-in-out infinite both}
+ .hero-art .club-slogan{animation:bsc-slogan-loop 5s ease-out infinite both}
+ .firework-burst i{animation:bsc-spark-loop 5s cubic-bezier(.12,.5,.3,1) var(--burst-delay) infinite both}
+ .firework-burst::after{animation:bsc-ring-loop 5s ease-out var(--burst-delay) infinite both}
+ .confetti-cannon i{animation:bsc-confetti-loop 5s cubic-bezier(.15,.55,.4,1) var(--confetti-delay) infinite both}
+}
+@keyframes bsc-logo-loop{
+ 0%{opacity:0;transform:translateY(24px) scale(.84)}
+ 28%{opacity:1;transform:translateY(-3px) scale(1.025)}
+ 38%,100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes bsc-glint-loop{
+ 0%,16%{background-position:150% 0,0 0,0 0}
+ 68%,100%{background-position:-50% 0,0 0,0 0}
+}
+@keyframes bsc-slogan-loop{
+ 0%,34%{opacity:0;transform:translateY(12px)}
+ 56%,100%{opacity:1;transform:translateY(0)}
+}
+@keyframes bsc-spark-loop{
+ 0%{opacity:0;transform:translate(0,0) scale(.25)}
+ 3%{opacity:1}
+ 22%{opacity:.85}
+ 33%,100%{opacity:0;transform:translate(var(--spark-x),var(--spark-y)) scale(.2)}
+}
+@keyframes bsc-ring-loop{
+ 0%{opacity:0;transform:scale(.2)}
+ 3%{opacity:.6}
+ 20%,100%{opacity:0;transform:scale(4)}
+}
+@keyframes bsc-confetti-loop{
+ 0%{opacity:0;transform:translate(0,0) rotate(0deg) scale(.3)}
+ 4%{opacity:1}
+ 27%{opacity:1;transform:translate(calc(var(--confetti-x) * .65),var(--confetti-y)) rotate(calc(var(--confetti-spin) * .45)) scale(1)}
+ 51%{opacity:1}
+ 65%,100%{opacity:0;transform:translate(var(--confetti-x),calc(var(--confetti-y) + 230px)) rotate(var(--confetti-spin)) scale(.65)}
+}
