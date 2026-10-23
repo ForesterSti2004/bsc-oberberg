@@ -52,3 +52,11 @@
 /* Vereinsslogan unter dem großen Logo */
 .hero-art .club-slogan{position:absolute;z-index:2;left:0;right:0;bottom:-45px;margin:0;max-width:none;text-align:center;font-size:clamp(16px,1.7vw,24px);font-weight:800;font-style:italic;letter-spacing:2px;line-height:1.3;color:#ffd329;text-shadow:0 3px 10px #0007}
 @media(max-width:620px){.hero-art .club-slogan{bottom:-23px;font-size:17px;letter-spacing:1.5px}}
+
+/* Weißer Slogan mit dunkler Kontur und plastischer Tiefe */
+.hero-art .club-slogan{
+ color:#fff;
+ -webkit-text-stroke:.65px #071b35;
+ paint-order:stroke fill;
+ text-shadow:-1px -1px 0 #071b35,1px -1px 0 #071b35,-1px 1px 0 #071b35,1px 1px 0 #071b35,1px 2px 0 #8c9aae,2px 3px 0 #687b94,3px 4px 0 #334b69,4px 5px 0 #071b35,0 7px 9px #0009;
+}
