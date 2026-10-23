@@ -238,3 +238,33 @@
  51%{opacity:1}
  65%,100%{opacity:0;transform:translate(var(--confetti-x),calc(var(--confetti-y) + 230px)) rotate(var(--confetti-spin)) scale(.65)}
 }
+
+/* Warme Flammen hinter den seitlichen Logokanten */
+.logo-flames{position:absolute;inset:0;z-index:1;pointer-events:none}
+.logo-flames i{position:absolute;bottom:19%;width:52px;height:115px;border-radius:70% 18% 65% 35%;background:linear-gradient(0deg,#e53916 0%,#ff8a13 47%,#ffdd56 86%,#fff3ae 100%);transform:rotate(-17deg);transform-origin:50% 100%;opacity:.85;box-shadow:0 0 18px #ff7b242b}
+.logo-flames i::after{content:"";position:absolute;inset:42% 23% 6%;border-radius:70% 15% 65% 35%;background:linear-gradient(0deg,#ffbd2b,#fff0ac);opacity:.85}
+.logo-flames i:nth-child(1){left:1%;height:105px;--flame-lean:-20deg}
+.logo-flames i:nth-child(2){left:6%;bottom:23%;height:145px;width:43px;--flame-lean:-9deg}
+.logo-flames i:nth-child(3){left:10%;bottom:17%;height:85px;width:39px;--flame-lean:12deg}
+.logo-flames i:nth-child(4){right:1%;height:105px;--flame-lean:20deg;transform:rotate(20deg)}
+.logo-flames i:nth-child(5){right:6%;bottom:23%;height:145px;width:43px;--flame-lean:9deg;transform:rotate(9deg)}
+.logo-flames i:nth-child(6){right:10%;bottom:17%;height:85px;width:39px;--flame-lean:-12deg}
+.hero-art>img{z-index:2}
+.hero-art .club-slogan{z-index:4}
+@media(prefers-reduced-motion:no-preference){
+ .logo-flames i{animation:bsc-flame-dance 5s ease-in-out infinite}
+ .logo-flames i:nth-child(2n){animation-delay:-1.2s}
+ .logo-flames i:nth-child(3n){animation-delay:-2.6s}
+}
+@keyframes bsc-flame-dance{
+ 0%,100%{transform:rotate(var(--flame-lean)) scale(.9,1);opacity:.75}
+ 20%{transform:rotate(calc(var(--flame-lean) + 7deg)) scale(1.05,.88);opacity:.9}
+ 45%{transform:rotate(calc(var(--flame-lean) - 5deg)) scale(.87,1.1);opacity:.85}
+ 70%{transform:rotate(calc(var(--flame-lean) + 4deg)) scale(1,.93);opacity:.95}
+}
+@media(max-width:620px){
+ .logo-flames i{width:33px;height:75px}
+ .logo-flames i:nth-child(1),.logo-flames i:nth-child(4){height:72px}
+ .logo-flames i:nth-child(2),.logo-flames i:nth-child(5){height:95px;width:29px}
+ .logo-flames i:nth-child(3),.logo-flames i:nth-child(6){height:60px;width:25px}
+}
